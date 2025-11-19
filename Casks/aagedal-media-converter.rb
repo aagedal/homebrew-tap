@@ -1,5 +1,5 @@
 cask "aagedal-media-converter" do
-  version "2.8"
+  version "2.9"
   sha256 "6ffbad47bfd63981a022b6602c43daaccbe4381fbc326cca7134200f66bf891f"
 
   url "https://github.com/aagedal/Aagedal-Media-Converter/releases/download/v.#{version}/Aagedal-Media-Converter_#{version.tr(".", "-")}.zip",
