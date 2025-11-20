@@ -15,9 +15,7 @@ cask "aagedal-media-converter" do
 
   caveats do
     <<~EOS
-      Replace the placeholder checksum before distributing this cask.
-      Generate the SHA-256 with:
-        shasum -a 256 AagedalVideoLoop_Converter_#{version.tr(".", "-")}.zip
+      Thanks for installing Aagedal Media Converter! I hope you like it :D
     EOS
   end
 end
