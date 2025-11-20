@@ -15,7 +15,7 @@ cask "aagedal-media-converter" do
 
   caveats do
     <<~EOS
-      Thanks for installing Aagedal Media Converter! I hope you like it :D
+      Thanks for installing Aagedal Media Converter #{version}! I hope you like it :D
     EOS
   end
 end
