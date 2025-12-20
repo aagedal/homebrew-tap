@@ -1,6 +1,6 @@
 cask "aagedal-media-converter" do
-  version "3.0.1"
-  sha256 "a24dfdfd86237cbf7f7d093d65f679e46cbda9240813b78bd6d3dc3b09c0f711"
+  version "3.1.0"
+  sha256 "29c427a5c5c65edc148ea7ea7c11c776d9c63a72535432a8b4569863c8836eda"
 
   url "https://github.com/aagedal/Aagedal-Media-Converter/releases/download/v.#{version}/Aagedal-Media-Converter_#{version.tr(".", "-")}.zip",
       verified: "github.com/aagedal/Aagedal-Media-Converter/"
