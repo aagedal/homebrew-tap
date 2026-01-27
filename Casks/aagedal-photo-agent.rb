@@ -12,11 +12,11 @@ cask "aagedal-photo-agent" do
   depends_on arch: :arm64
   depends_on macos: ">= :sequoia"
 
-  app "#{name}!.app"
+  app "#{name}.app"
 
   caveats do
     <<~EOS
-      Thanks for installing #{name}! #{version}! I hope you like it :D
+      Thanks for installing #{name} #{version}! I hope you like it :D
     EOS
   end
 end
