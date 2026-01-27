@@ -13,5 +13,4 @@ cask "aagedal-photo-agent" do
   depends_on macos: ">= :sequoia"
 
   app "#{name}.app"
-  end
 end
