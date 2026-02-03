@@ -1,7 +1,7 @@
 
 cask "aagedal-photo-agent" do
-  version "1.2.1"
-  sha256 "cee1f682b80cdddfde549965eeb2d5eb2e583656b99bc0bbf79246fd67c2535e"
+  version "1.3.0"
+  sha256 "d01700d039b33737cc192ba3f0f0f857f5caa0a640a0a955b36089f75bda1415"
 
   url "https://github.com/aagedal/Aagedal-Photo-Agent/releases/download/v.#{version}/Aagedal-Photo-Agent_#{version.tr(".", "-")}.zip",
       verified: "github.com/aagedal/Aagedal-Photo-Agent/"
