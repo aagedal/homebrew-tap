@@ -1,6 +1,6 @@
 cask "aagedal-media-player" do
-  version "1.3.1"
-  sha256 "3950297ab4baac8689e2146936eb162e8046cf3bf4418b13ef9f3c037d870f0d"
+  version "1.3.2"
+  sha256 "c8edb6f4321771beaaaed6018598bc0ea696603bb10a8dd2a65829afb84ac061"
 
   url "https://github.com/aagedal/Aagedal-Media-Player/releases/download/v.#{version}/Aagedal-Media-Player_#{version.tr(".", "-")}.zip",
       verified: "github.com/aagedal/Aagedal-Media-Player/"
