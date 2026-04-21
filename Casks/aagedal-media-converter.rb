@@ -5,8 +5,13 @@ cask "aagedal-media-converter" do
   url "https://github.com/aagedal/Aagedal-Media-Converter/releases/download/v.#{version}/Aagedal-Media-Converter_#{version.tr(".", "-")}.zip",
       verified: "github.com/aagedal/Aagedal-Media-Converter/"
   name "Aagedal Media Converter"
-  desc "Minimalist FFMPEG front end written in SwiftUI, with support for batch conversion and watch folder."
+  desc "Minimalist FFmpeg front end in SwiftUI with batch conversion and watch folders"
   homepage "https://github.com/aagedal/Aagedal-Media-Converter"
+
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   depends_on arch: :arm64
   depends_on macos: ">= :sequoia"

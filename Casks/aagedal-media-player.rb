@@ -5,8 +5,13 @@ cask "aagedal-media-player" do
   url "https://github.com/aagedal/Aagedal-Media-Player/releases/download/v.#{version}/Aagedal-Media-Player_#{version.tr(".", "-")}.zip",
       verified: "github.com/aagedal/Aagedal-Media-Player/"
   name "Aagedal Media Player"
-  desc "Quickly play video files with JKL playback and timecode support."
+  desc "Video player with JKL playback and timecode support"
   homepage "https://github.com/aagedal/Aagedal-Media-Player"
+
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   depends_on arch: :arm64
   depends_on macos: ">= :sequoia"
