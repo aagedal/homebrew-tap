@@ -1,8 +1,8 @@
 cask "aagedal-media-converter" do
-  version "4.0.0"
-  sha256 "e0510d22fa76970db1d3682dd59bd774adeb00ca357019d04f6947a512fedcca"
+  version "4.0.1"
+  sha256 "05c395e66cef98346f305adf11a291b2e67c940f4be8f38fcf3a34cbeeb51921"
 
-  url "https://github.com/aagedal/Aagedal-Media-Converter/releases/download/#{version}/Aagedal_Media_Converter_#{version}.zip",
+  url "https://github.com/aagedal/Aagedal-Media-Converter/releases/download/#{version}/Aagedal_Media_Converter_#{version.dots_to_hyphens}.zip",
       verified: "github.com/aagedal/Aagedal-Media-Converter/"
   name "Aagedal Media Converter"
   desc "Minimalist FFmpeg front end in SwiftUI with batch conversion and watch folders"
