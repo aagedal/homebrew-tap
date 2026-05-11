@@ -1,18 +1,34 @@
 class SwiftExif < Formula
   desc "Native Swift media-metadata CLI for Exif, IPTC, XMP, and C2PA"
   homepage "https://codeberg.org/taagedal/SwiftExif"
-  url "https://codeberg.org/taagedal/SwiftExif/archive/1.6.0.tar.gz"
   version "1.6.0"
-  sha256 "89136dacb65bd31528647a6ba78334b641e512115e8bb53607ee6b3a134c6ad3"
   license "GPL-3.0-or-later"
 
-  depends_on xcode: ["16.0", :build]
-  depends_on :macos
-  depends_on macos: :ventura
+  on_macos do
+    depends_on arch: :arm64
+    depends_on macos: :ventura
+
+    on_arm do
+      url "https://codeberg.org/taagedal/SwiftExif/releases/download/#{version}/swift-exif-macos-arm64"
+      sha256 "568df1d2c6ff3304d28ef0d91f0ca2bc44e6290f44a24a379ae1a37f024f0919"
+    end
+  end
+
+  on_linux do
+    on_intel do
+      url "https://codeberg.org/taagedal/SwiftExif/releases/download/#{version}/swift-exif-linux-x86_64"
+      sha256 "7ee27b16740abe716b20aba9386dcaae9e635ed639f2589a430948bf6885c213"
+    end
+    on_arm do
+      url "https://codeberg.org/taagedal/SwiftExif/releases/download/#{version}/swift-exif-linux-aarch64"
+      sha256 "e8c3fdbb41f6f76f761176a032cd56efb5fd3d2f2281bc56e1d8260e942d4d0b"
+    end
+  end
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release"
-    bin.install ".build/release/swift-exif"
+    binary = Dir["swift-exif-*"].first
+    chmod 0755, binary
+    bin.install binary => "swift-exif"
   end
 
   test do
