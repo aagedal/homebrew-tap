@@ -1,38 +1,42 @@
-# aagedal/homebrew-tap
+# taagedal/homebrew-tap
 
-A personal Homebrew tap for Aagedal-built apps and CLI tools.
+A personal Homebrew tap for Aagedal-built apps and CLI tools, hosted
+on [Codeberg](https://codeberg.org/taagedal/homebrew-tap).
 
 ## Install
 
+Because this tap lives outside GitHub, the URL must be passed
+explicitly the first time:
+
 ```
-brew tap aagedal/tap
+brew tap taagedal/tap https://codeberg.org/taagedal/homebrew-tap
 ```
 
 ### CLIs
 
 ```
-brew install swift-exif
+brew install taagedal/tap/swift-exif
 ```
 
 ### Apps (casks)
 
 ```
-brew install --cask aagedal-photo-agent
-brew install --cask aagedal-image-extractor
-brew install --cask aagedal-media-converter
-brew install --cask aagedal-media-player
+brew install --cask taagedal/tap/aagedal-photo-agent
+brew install --cask taagedal/tap/aagedal-image-extractor
+brew install --cask taagedal/tap/aagedal-media-converter
+brew install --cask taagedal/tap/aagedal-media-player
 ```
 
-## Migration from `aagedal/casks`
+## Migration from GitHub
 
-The repo was renamed from `homebrew-casks` to `homebrew-tap`. GitHub
-redirects the old URL, so existing installs keep working — but the new
-short name is cleaner. To migrate:
+This tap previously lived at `github.com/aagedal/homebrew-tap` (and
+before that, `homebrew-casks`). It has moved to Codeberg under the
+`taagedal` namespace. To migrate an existing install:
 
 ```
-brew untap aagedal/casks
-brew tap aagedal/tap
+brew untap aagedal/tap   # or aagedal/casks if you never re-tapped
+brew tap taagedal/tap https://codeberg.org/taagedal/homebrew-tap
 ```
 
-Old-style installs like `brew install aagedal/casks/aagedal-photo-agent`
-continue to work via GitHub's redirect.
+Already-installed apps keep working; only future `brew update` /
+`brew upgrade` runs need the new tap.

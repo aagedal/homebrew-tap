@@ -1,22 +1,18 @@
 class SwiftExif < Formula
-  desc "Native Swift ExifTool clone for IPTC photojournalism"
-  homepage "https://github.com/aagedal/SwiftExif"
-  version "1.2.0"
+  desc "Native Swift media-metadata CLI for Exif, IPTC, XMP, and C2PA"
+  homepage "https://codeberg.org/taagedal/SwiftExif"
+  url "https://codeberg.org/taagedal/SwiftExif/archive/1.6.0.tar.gz"
+  version "1.6.0"
+  sha256 "89136dacb65bd31528647a6ba78334b641e512115e8bb53607ee6b3a134c6ad3"
   license "GPL-3.0-or-later"
 
-  on_macos do
-    on_arm do
-      url "https://github.com/aagedal/SwiftExif/releases/download/#{version}/swift-exif-#{version}-macos-arm64.tar.gz"
-      sha256 "ccdd2b8dac02a01f4920463ab314b3ea9d0149cd4ee297f445bb6e8a4aafc5ef"
-    end
-    on_intel do
-      url "https://github.com/aagedal/SwiftExif/releases/download/#{version}/swift-exif-#{version}-macos-x86_64.tar.gz"
-      sha256 "df222ccb4db76881b4efd3c433041970fe289add992a6a9b7b4148e072e48e0c"
-    end
-  end
+  depends_on xcode: ["16.0", :build]
+  depends_on :macos
+  depends_on macos: :ventura
 
   def install
-    bin.install Dir["swift-exif-macos-*"].first => "swift-exif"
+    system "swift", "build", "--disable-sandbox", "-c", "release"
+    bin.install ".build/release/swift-exif"
   end
 
   test do
