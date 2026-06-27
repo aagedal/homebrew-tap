@@ -1,6 +1,6 @@
 cask "aagedal-media-converter" do
-  version "4.2.0"
-  sha256 "0a3f1a675e25c6dd34890b0c18b227b74599c6dcaed19718c8b6eb553658c186"
+  version "4.3.0"
+  sha256 "72bad6e3fdadb5434dcb3843d971cb7978849a74efdc4c09363a4ba0f7bce146"
 
   url "https://aagedal.me/apps/Aagedal_Media_Converter_#{version.dots_to_hyphens}.zip",
       verified: "aagedal.me/apps/"
