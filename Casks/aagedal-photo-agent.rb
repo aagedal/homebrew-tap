@@ -1,6 +1,6 @@
 cask "aagedal-photo-agent" do
-  version "1.6.9"
-  sha256 "f76ac5118991ea9f78f482b77f72f940db0e68bf2c2b5c4d5a13daa788387d22"
+  version "2.1.0"
+  sha256 "1ac2e10190c05ce259118c84809043e5a18e5a2521cc14a8318db047f0be7891"
 
   url "https://codeberg.org/taagedal/Aagedal-Photo-Agent/releases/download/#{version}/Aagedal-Photo-Agent_#{version.tr(".", "-")}.zip",
       verified: "codeberg.org/taagedal/Aagedal-Photo-Agent/"
