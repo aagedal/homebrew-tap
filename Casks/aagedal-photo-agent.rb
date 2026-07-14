@@ -1,6 +1,6 @@
 cask "aagedal-photo-agent" do
-  version "2.1.0"
-  sha256 "1ac2e10190c05ce259118c84809043e5a18e5a2521cc14a8318db047f0be7891"
+  version "2.1.2"
+  sha256 "7f4b087a04aa9a4708f4b84ed62ec8c32ff8e0b1868070f505ca3ab865a3507b"
 
   url "https://aagedal.me/apps/Aagedal-Photo-Agent-#{version}.dmg",
       verified: "aagedal.me/apps/"
