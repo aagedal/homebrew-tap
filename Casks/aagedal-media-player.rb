@@ -6,15 +6,15 @@ cask "aagedal-media-player" do
       verified: "codeberg.org/taagedal/Aagedal-Media-Player/"
   name "Aagedal Media Player"
   desc "Video player with JKL playback and timecode support"
-  homepage "https://codeberg.org/taagedal/Aagedal-Media-Player"
+  homepage "https://github.com/aagedal/Aagedal-Media-Player"
 
   livecheck do
-    url "https://codeberg.org/taagedal/Aagedal-Media-Player/releases.atom"
-    regex(%r{/tag/v?\.?(\d+(?:\.\d+)+)}i)
+    url "https://raw.githubusercontent.com/aagedal/Aagedal-Media-Player/main/appcast.xml"
+    regex(/sparkle:shortVersionString>(\d+(?:\.\d+)+)</i)
   end
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Aagedal Media Player.app"
 end

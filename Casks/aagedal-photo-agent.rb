@@ -6,15 +6,15 @@ cask "aagedal-photo-agent" do
       verified: "aagedal.me/apps/"
   name "Aagedal Photo Agent"
   desc "Batch-edit IPTC photo metadata with variables and AI face-detection tagging"
-  homepage "https://codeberg.org/taagedal/Aagedal-Photo-Agent"
+  homepage "https://github.com/aagedal/Aagedal-Photo-Agent"
 
   livecheck do
-    url "https://codeberg.org/taagedal/Aagedal-Photo-Agent/releases.atom"
-    regex(%r{/tag/v?\.?(\d+(?:\.\d+)+)}i)
+    url "https://raw.githubusercontent.com/aagedal/Aagedal-Photo-Agent/main/appcast.xml"
+    regex(/sparkle:shortVersionString>(\d+(?:\.\d+)+)</i)
   end
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Aagedal Photo Agent.app"
 end

@@ -6,15 +6,15 @@ cask "aagedal-media-converter" do
       verified: "aagedal.me/apps/"
   name "Aagedal Media Converter"
   desc "Minimalist FFmpeg front end in SwiftUI with batch conversion and watch folders"
-  homepage "https://codeberg.org/taagedal/Aagedal-Media-Converter"
+  homepage "https://github.com/aagedal/Aagedal-Media-Converter"
 
   livecheck do
-    url "https://codeberg.org/taagedal/Aagedal-Media-Converter/raw/branch/main/appcast.xml"
+    url "https://raw.githubusercontent.com/aagedal/Aagedal-Media-Converter/main/appcast.xml"
     regex(/sparkle:shortVersionString>(\d+(?:\.\d+)+)</i)
   end
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "Aagedal Media Converter.app"
 end

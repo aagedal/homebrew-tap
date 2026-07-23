@@ -1,6 +1,6 @@
 class SwiftExif < Formula
   desc "Native Swift media-metadata CLI for Exif, IPTC, XMP, and C2PA"
-  homepage "https://codeberg.org/taagedal/SwiftExif"
+  homepage "https://github.com/aagedal/SwiftExif"
   version "1.8.1"
   license "GPL-3.0-or-later"
 
