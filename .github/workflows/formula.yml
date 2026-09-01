@@ -1,0 +1,32 @@
+name: Formula
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - Formula/swift-exif.rb
+      - .github/workflows/formula.yml
+  pull_request:
+    paths:
+      - Formula/swift-exif.rb
+      - .github/workflows/formula.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  swift-exif:
+    name: Install and test swift-exif
+    runs-on: macos-15
+    timeout-minutes: 10
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+    steps:
+      - uses: actions/checkout@v6
+      - name: Tap this checkout
+        run: brew tap aagedal/tap "$GITHUB_WORKSPACE"
+      - name: Install formula
+        run: brew install --formula aagedal/tap/swift-exif
+      - name: Run formula smoke tests
+        run: brew test aagedal/tap/swift-exif
