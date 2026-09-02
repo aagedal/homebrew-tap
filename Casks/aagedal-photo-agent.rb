@@ -1,9 +1,9 @@
 cask "aagedal-photo-agent" do
-  version "2.1.2"
-  sha256 "7f4b087a04aa9a4708f4b84ed62ec8c32ff8e0b1868070f505ca3ab865a3507b"
+  version "2.2.0"
+  sha256 "1db551f9fe0de23a3f3ec4a12dd1d2f64dc474204f7be4812dd59b0842137424"
 
-  url "https://aagedal.me/apps/Aagedal-Photo-Agent-#{version}.dmg",
-      verified: "aagedal.me/apps/"
+  url "https://github.com/aagedal/Aagedal-Photo-Agent/releases/download/#{version}/Aagedal-Photo-Agent-#{version}.dmg",
+      verified: "github.com/aagedal/Aagedal-Photo-Agent/"
   name "Aagedal Photo Agent"
   desc "Batch-edit IPTC photo metadata with variables and AI face-detection tagging"
   homepage "https://github.com/aagedal/Aagedal-Photo-Agent"

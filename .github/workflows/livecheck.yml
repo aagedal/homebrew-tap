@@ -1,0 +1,31 @@
+name: Livecheck
+
+on:
+  schedule:
+    - cron: "17 7 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  versions:
+    name: Check upstream versions
+    runs-on: macos-15
+    timeout-minutes: 10
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+    steps:
+      - uses: actions/checkout@v6
+      - name: Tap this checkout
+        run: brew tap aagedal/tap "$GITHUB_WORKSPACE"
+      - name: Fail when an update is available
+        shell: bash
+        run: |
+          results="$(brew livecheck --quiet --json --tap aagedal/tap --newer-only)"
+          jq . <<<"$results"
+
+          if [[ "$(jq length <<<"$results")" -ne 0 ]]; then
+            echo "::error::One or more tap entries have newer upstream versions."
+            exit 1
+          fi

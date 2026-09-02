@@ -1,0 +1,50 @@
+name: Casks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - Casks/**
+      - .github/workflows/casks.yml
+  pull_request:
+    paths:
+      - Casks/**
+      - .github/workflows/casks.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  style:
+    name: Check cask style
+    runs-on: macos-15
+    timeout-minutes: 10
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+    steps:
+      - uses: actions/checkout@v6
+      - run: brew style Casks/*.rb
+
+  validate:
+    name: Validate ${{ matrix.cask }}
+    runs-on: macos-15
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        cask:
+          - aagedal-image-extractor
+          - aagedal-media-converter
+          - aagedal-media-player
+          - aagedal-photo-agent
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+    steps:
+      - uses: actions/checkout@v6
+      - name: Tap this checkout
+        run: brew tap aagedal/tap "$GITHUB_WORKSPACE"
+      - name: Audit cask
+        run: brew audit --strict --online --cask "aagedal/tap/${{ matrix.cask }}"
+      - name: Fetch and verify artifact
+        run: brew fetch --cask "aagedal/tap/${{ matrix.cask }}"

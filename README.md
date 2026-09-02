@@ -14,6 +14,9 @@ brew tap aagedal/tap
 brew install aagedal/tap/swift-exif
 ```
 
+The `swift-exif` command is provided by
+[SwiftMediaMetadata](https://github.com/aagedal/SwiftMediaMetadata).
+
 ### Apps (casks)
 
 ```

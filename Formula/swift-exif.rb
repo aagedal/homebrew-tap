@@ -1,7 +1,7 @@
 class SwiftExif < Formula
   desc "Native Swift media-metadata CLI for Exif, IPTC, XMP, and C2PA"
   homepage "https://github.com/aagedal/SwiftMediaMetadata"
-  version "2.0.0"
+  version "3.0.0"
   license "GPL-3.0-or-later"
 
   on_macos do
@@ -10,7 +10,7 @@ class SwiftExif < Formula
 
     on_arm do
       url "https://github.com/aagedal/SwiftMediaMetadata/releases/download/#{version}/swift-exif-macos-arm64.tar.gz"
-      sha256 "0411cc33b88b67d0c399c8a22c4a95e036bba76c7ab3a8330e55afbb91b4da54"
+      sha256 "c5c4e160d61806ba9fd4821e23c1b2e6aa4d0813ff82612673e7fb78dfc919ad"
     end
   end
 
