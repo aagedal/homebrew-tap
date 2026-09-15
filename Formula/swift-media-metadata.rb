@@ -1,4 +1,4 @@
-class SwiftExif < Formula
+class SwiftMediaMetadata < Formula
   desc "Native Swift media-metadata CLI for Exif, IPTC, XMP, and C2PA"
   homepage "https://github.com/aagedal/SwiftMediaMetadata"
   version "3.0.1"

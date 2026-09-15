@@ -11,7 +11,7 @@ brew tap aagedal/tap
 ### CLIs
 
 ```
-brew install aagedal/tap/swift-exif
+brew install aagedal/tap/swift-media-metadata
 ```
 
 The `swift-exif` command is provided by
