@@ -1,14 +1,14 @@
 cask "aagedal-image-extractor" do
-  version "1.1.0"
-  sha256 "444b60b335b7b714ae877e16a0f034e4cf966493daf9e7ab1670e929179e47fb"
+  version "1.2.0"
+  sha256 "cdffc9c2619a4de72660743238c6bb008eef1a28984e0ae72533eb5d35a54fa5"
 
-  url "https://codeberg.org/taagedal/Aagedal-Image-Extractor/releases/download/#{version}/Aagedal-Image-Extractor_#{version.tr(".", "-")}.zip"
+  url "https://github.com/aagedal/Aagedal-Image-Extractor/releases/download/v.#{version}/Aagedal-Image-Extractor_#{version.tr(".", "-")}.zip"
   name "Aagedal Image Extractor"
-  desc "Batch-extract images from PDF and DOCX files with IPTC metadata"
-  homepage "https://codeberg.org/taagedal/Aagedal-Image-Extractor/"
+  desc "Extract images from documents and archives with IPTC metadata"
+  homepage "https://github.com/aagedal/Aagedal-Image-Extractor"
 
   livecheck do
-    url "https://codeberg.org/taagedal/Aagedal-Image-Extractor/releases.atom"
+    url "https://github.com/aagedal/Aagedal-Image-Extractor/releases/latest"
     strategy :page_match
     regex(%r{/tag/v?\.?(\d+(?:\.\d+)+)}i)
   end
