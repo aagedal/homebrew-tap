@@ -4,11 +4,11 @@ on:
   push:
     branches: [main]
     paths:
-      - Formula/swift-exif.rb
+      - Formula/**
       - .github/workflows/formula.yml
   pull_request:
     paths:
-      - Formula/swift-exif.rb
+      - Formula/**
       - .github/workflows/formula.yml
   workflow_dispatch:
 
@@ -16,17 +16,28 @@ permissions:
   contents: read
 
 jobs:
-  swift-exif:
-    name: Install and test swift-exif
+  test:
+    name: Install and test ${{ matrix.formula }}
     runs-on: macos-15
-    timeout-minutes: 10
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - formula: swift-media-metadata
+          - formula: yt-dlp-rs
+          - formula: gallery-dl-rs
+            flags: --HEAD
     env:
       HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v6
       - name: Tap this checkout
-        run: brew tap aagedal/tap "$GITHUB_WORKSPACE"
+        run: |
+          brew tap aagedal/tap "$GITHUB_WORKSPACE"
+          brew trust aagedal/tap
       - name: Install formula
-        run: brew install --formula aagedal/tap/swift-exif
+        run: brew install --formula ${{ matrix.flags }} "aagedal/tap/${{ matrix.formula }}"
       - name: Run formula smoke tests
-        run: brew test aagedal/tap/swift-exif
+        run: brew test "aagedal/tap/${{ matrix.formula }}"

@@ -22,6 +22,7 @@ jobs:
     timeout-minutes: 10
     env:
       HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v6
       - run: brew style Casks/*.rb
@@ -38,12 +39,16 @@ jobs:
           - aagedal-media-converter
           - aagedal-media-player
           - aagedal-photo-agent
+          - helium-neo
     env:
       HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v6
       - name: Tap this checkout
-        run: brew tap aagedal/tap "$GITHUB_WORKSPACE"
+        run: |
+          brew tap aagedal/tap "$GITHUB_WORKSPACE"
+          brew trust aagedal/tap
       - name: Audit cask
         run: brew audit --strict --online --cask "aagedal/tap/${{ matrix.cask }}"
       - name: Fetch and verify artifact

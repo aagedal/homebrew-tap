@@ -12,10 +12,15 @@ brew tap aagedal/tap
 
 ```
 brew install aagedal/tap/swift-media-metadata
+brew install aagedal/tap/yt-dlp-rs
+brew install --HEAD aagedal/tap/gallery-dl-rs
 ```
 
 The `swift-exif` command is provided by
 [SwiftMediaMetadata](https://github.com/aagedal/SwiftMediaMetadata).
+
+`gallery-dl-rs` has no tagged releases yet, so it builds from the latest
+`main` with Rust. Update it with `brew upgrade --fetch-HEAD gallery-dl-rs`.
 
 ### Apps (casks)
 
@@ -24,6 +29,7 @@ brew install --cask aagedal/tap/aagedal-photo-agent
 brew install --cask aagedal/tap/aagedal-image-extractor
 brew install --cask aagedal/tap/aagedal-media-converter
 brew install --cask aagedal/tap/aagedal-media-player
+brew install --cask aagedal/tap/helium-neo
 ```
 
 ## Migration from Codeberg
