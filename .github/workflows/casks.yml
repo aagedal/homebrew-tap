@@ -38,6 +38,7 @@ jobs:
           - aagedal-media-converter
           - aagedal-media-player
           - aagedal-photo-agent
+          - helium-neo
     env:
       HOMEBREW_NO_AUTO_UPDATE: "1"
     steps:
