@@ -11,23 +11,23 @@ class YtDlpRs < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/aagedal/yt-dlp-rs/releases/download/v0.6.0-beta.1/yt-dlp-rs-v0.6.0-beta.1-aarch64-apple-darwin.tar.gz"
-      sha256 "375bc17a89ac34af1d614c80d3bdf2ace1d4503c3ffdd9723a19ace3628a5e73"
+      url "https://github.com/aagedal/yt-dlp-rs/releases/download/v1.0.0-rc.2/yt-dlp-rs-v1.0.0-rc.2-aarch64-apple-darwin.tar.gz"
+      sha256 "e40600e8d97a0f6d58ce4e1bbd0425b92db3f99b5a1f0761aaa43795d055f569"
     end
     on_intel do
-      url "https://github.com/aagedal/yt-dlp-rs/releases/download/v0.6.0-beta.1/yt-dlp-rs-v0.6.0-beta.1-x86_64-apple-darwin.tar.gz"
-      sha256 "64b7ab276c447afd8d6ad2984e97d45626b505ff39a6ad139457649be12d5cb9"
+      url "https://github.com/aagedal/yt-dlp-rs/releases/download/v1.0.0-rc.2/yt-dlp-rs-v1.0.0-rc.2-x86_64-apple-darwin.tar.gz"
+      sha256 "4520473bf9237a7701c39f2b009499707b14eab7e6d351ebd02140a127a46ef4"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/aagedal/yt-dlp-rs/releases/download/v0.6.0-beta.1/yt-dlp-rs-v0.6.0-beta.1-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "9d36cb794e374a40ff09796fcac185d2c010d9cb2ecf0556c4309026405956f2"
+      url "https://github.com/aagedal/yt-dlp-rs/releases/download/v1.0.0-rc.2/yt-dlp-rs-v1.0.0-rc.2-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "9296c62e92b1bd46be55b6a62722e44b420c4c869626518b803eb502fbda891a"
     end
     on_intel do
-      url "https://github.com/aagedal/yt-dlp-rs/releases/download/v0.6.0-beta.1/yt-dlp-rs-v0.6.0-beta.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "7dd5e56c303409e0efcad83dddb1ed2568c9e1080029c723a06c34515c7c5463"
+      url "https://github.com/aagedal/yt-dlp-rs/releases/download/v1.0.0-rc.2/yt-dlp-rs-v1.0.0-rc.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "58d8303ccb3af7de279e19c04e6357e0d6236e31da90b488bf1573ee4330d615"
     end
   end
 
