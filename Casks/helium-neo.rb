@@ -1,6 +1,6 @@
 cask "helium-neo" do
-  version "0.20.2.1"
-  sha256 "aa51353455ad4f84f8e947ea8be714e2ac8b556018ed79fdfe57ea9e2611e330"
+  version "0.22.1.1"
+  sha256 "a44ee45e1d32eea2d32ed69e6ab4ee32bf154d6e6b8c53e46b6d526646063223"
 
   url "https://github.com/aagedal/helium/releases/download/v#{version}-neo/Helium-Neo-#{version}-macOS-arm64-signed.dmg"
   name "Helium Neo"
